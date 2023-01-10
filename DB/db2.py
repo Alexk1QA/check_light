@@ -2,8 +2,8 @@ from datetime import datetime, timedelta
 import sqlite3
 import json
 
-connect = sqlite3.connect("/Users/macbook/Desktop/check_light_home/DB/eng_bot.accdb")
-# connect = sqlite3.connect("/home/ubuntu/eng_bot/DB/eng_bot.accdb")
+# connect = sqlite3.connect("/Users/macbook/Desktop/check_light_home/DB/eng_bot.accdb")
+connect = sqlite3.connect("/home/ubuntu/eng_bot/DB/eng_bot.accdb")
 cursor = connect.cursor()
 
 
