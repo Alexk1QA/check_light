@@ -32,4 +32,3 @@ async def start(message: types.Message):
 
 def register_handler_commands_command(dp: Dispatcher):
     dp.register_message_handler(start, commands=["start"])
-    dp.register_message_handler(start, Text(equals="Главное меню"))

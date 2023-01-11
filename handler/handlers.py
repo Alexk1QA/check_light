@@ -28,8 +28,8 @@ async def def_checked(message: types.Message):
     data_base = db2.DB(message.from_user.id)
 
     if answer == "start ->":
-        last_status_lesnoy = 1
-        last_status_balzaka = 1
+        last_status_lesnoy = 3
+        last_status_balzaka = 3
 
         while True:
 
@@ -45,14 +45,14 @@ async def def_checked(message: types.Message):
                         pass
                     else:
                         last_status_lesnoy = 1
-                        await bot.send_message(message.from_user.id, f"Милютенко свет есть💡")
+                        await bot.send_message(message.from_user.id, f"Милютенко - свет есть ✅")
 
                 elif status_lesnoy["status"] == "error":
                     if last_status_lesnoy == 0:
                         pass
                     else:
                         last_status_lesnoy = 0
-                        await bot.send_message(message.from_user.id, f"Милютенко света нет 🕯")
+                        await bot.send_message(message.from_user.id, f"Милютенко - света нет 🌚")
 
                 status_balzaka = requests.get("https://vadymklymenko.com/ping/?ip=176.36.199.109").json()
 
@@ -62,14 +62,14 @@ async def def_checked(message: types.Message):
                         pass
                     else:
                         last_status_balzaka = 1
-                        await bot.send_message(message.from_user.id, f"Бальзака свет есть💡")
+                        await bot.send_message(message.from_user.id, f"Бальзака - свет есть ✅")
 
                 elif status_balzaka["status"] == "error":
                     if last_status_balzaka == 0:
                         pass
                     else:
                         last_status_balzaka = 0
-                        await bot.send_message(message.from_user.id, f"Бальзака света нет 🕯")
+                        await bot.send_message(message.from_user.id, f"Бальзака - света нет 🌚")
 
                 sleep_time = int(data_base.select_data_(column_="sleep_time", where_data=1)[0][0])
 
@@ -102,4 +102,3 @@ def register_handler_command(dp: Dispatcher):
     dp.register_message_handler(def_update_sleep_time, Text(equals="20"))
     dp.register_message_handler(def_update_sleep_time, Text(equals="25"))
     dp.register_message_handler(def_update_sleep_time, Text(equals="30"))
-
