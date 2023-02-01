@@ -10,5 +10,5 @@ def main():
     executor.start_polling(dp, skip_updates=True)
 
 
-if __name__ == '__main__ll__':
+if __name__ == '__main__l__':
     main()
