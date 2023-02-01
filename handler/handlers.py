@@ -92,11 +92,23 @@ async def def_update_sleep_time(message: types.Message):
     await bot.send_message(message.from_user.id, f"Установлен тайминг {message.text} мин")
 
 
+async def check(message: types.Message):
+
+    status_ok = requests.get("https://vadymklymenko.com/ping/?ip=176.104.54.26").json()
+
+    status_error = requests.get("https://vadymklymenko.com/ping/?ip=159.224.216.15").json()
+
+    await bot.send_message(message.from_user.id, f"status_ok {status_ok}\n"
+                                                 f"status_error {status_error}")
+
+
 def register_handler_command(dp: Dispatcher):
     dp.register_message_handler(def_checked, Text(equals="start ->"))
 
     dp.register_message_handler(def_on_off, Text(equals="off ->"))
     dp.register_message_handler(def_on_off, Text(equals="on ->"))
+
+    dp.register_message_handler(check, Text(equals="check"))
 
     dp.register_message_handler(def_update_sleep_time, Text(equals="15"))
     dp.register_message_handler(def_update_sleep_time, Text(equals="20"))
