@@ -1,7 +1,7 @@
 import sqlite3
 
-connect = sqlite3.connect("/Users/macbook/Desktop/check_light_home/DB/eng_bot.accdb")
-# connect = sqlite3.connect("/home/ubuntu/check_light/DB/eng_bot.accdb")
+# connect = sqlite3.connect("/Users/macbook/Desktop/check_light_home/DB/eng_bot.accdb")
+connect = sqlite3.connect("/home/ubuntu/check_light/DB/eng_bot.accdb")
 cursor = connect.cursor()
 
 
