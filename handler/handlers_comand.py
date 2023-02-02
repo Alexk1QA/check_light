@@ -1,4 +1,3 @@
-from aiogram.dispatcher.filters import Text
 from aiogram import types, Dispatcher
 from keyboard.keyboard import *
 from bot_init import bot
@@ -10,7 +9,7 @@ async def start(message: types.Message):
 
     data_base = db2.DB(message.from_user.id)
 
-    keyboard_start = Keyboard(["on ->", "off ->", "start ->"])
+    keyboard_start = Keyboard(["on M&B ->", "on M ->", "on B ->", "off M&B ->", "start ->"])
 
     await bot.send_message(message.from_user.id, f"Light bot 💡")
 
