@@ -53,8 +53,7 @@ async def def_checked(message: types.Message):
 
                 if mode == 1 or mode == 2:
 
-                    # status_lesnoy = requests.get("https://vadymklymenko.com/ping/?ip=176.104.54.26").json()
-                    status_lesnoy = {"status": "ok"}
+                    status_lesnoy = requests.get("https://vadymklymenko.com/ping/?ip=176.104.54.26").json()
 
                     if status_lesnoy["status"] == "ok":
 
@@ -73,8 +72,7 @@ async def def_checked(message: types.Message):
 
                 if mode == 1 or mode == 3:
 
-                    # status_balzaka = requests.get("https://vadymklymenko.com/ping/?ip=176.36.199.109").json()
-                    status_balzaka = {"status": "ok"}
+                    status_balzaka = requests.get("https://vadymklymenko.com/ping/?ip=176.36.199.109").json()
 
                     if status_balzaka["status"] == "ok":
 
