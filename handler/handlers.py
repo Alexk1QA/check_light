@@ -101,9 +101,8 @@ async def def_update_sleep_time(message: types.Message):
     await bot.delete_message(message.from_user.id, message.message_id)
 
     data_base = db2.DB(message.from_user.id)
-    a = 60
 
-    data_base.update_data_(column_="sleep_time", data_updating=int(message.text))
+    data_base.update_data_(column_="sleep_time", data_updating=int(message.text)*60)
 
     await bot.send_message(message.from_user.id, f"Установлен тайминг {message.text} мин")
 
@@ -133,4 +132,3 @@ def register_handler_command(dp: Dispatcher):
     dp.register_message_handler(def_update_sleep_time, Text(equals="25"))
     dp.register_message_handler(def_update_sleep_time, Text(equals="30"))
 
-    dp.register_message_handler(def_update_sleep_time, Text(equals="10"))
